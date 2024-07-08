@@ -1,5 +1,5 @@
 {% set name = "ml4xcube" %}
-{% set version = "0.0.6" %}
+{% set version = "1.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ml4xcube-{{ version }}.tar.gz
-  sha256: 3f58ed6e4babf54cf935bc881348ceea99c8207c24e878d2e793bb8bb9221903
+  sha256: 71940469581071621384ba9b9f6ff89e4494612595de4392c4f6932c8741fb3c
 
 build:
   noarch: python
@@ -50,8 +50,8 @@ about:
   license_file: LICENSE
   summary: 'ML package for data cubes'
   description: 'ML package for data cubes'
-  doc_url:  https://deepesdl.readthedocs.io/en/latest/ml-toolkit/introduction/
-  dev_url:  https://github.com/deepesdl/ML-Toolkits/tree/develop/mltools/ml4xcube
+  doc_url: https://deepesdl.readthedocs.io/en/latest/ml-toolkit/introduction/
+  dev_url: https://github.com/deepesdl/ML-Toolkits/tree/develop/mltools/ml4xcube
 
 extra:
   recipe-maintainers:
