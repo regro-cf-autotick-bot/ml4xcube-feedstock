@@ -6,20 +6,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ml4xcube-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ml4xcube-{{ version }}.tar.gz
   sha256: 6a61432b4878f7ac45fe59ff3b5e8859f096e8c7b32d8be8d03b95cf88c446d5
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - dask-core >=2023.2.0
     - dask >=2023.2.0
     - numpy >=1.24
@@ -31,6 +31,8 @@ requirements:
 
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - ml4xcube
   # disabling pip check until an upstream issue with dask-image is resolved. See:
